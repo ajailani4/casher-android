@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/NestedScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteColor"
+    android:overScrollMode="never"
+    tools:context="view.fragment.Statistics">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whiteColor">
+
+        <!-- InEx Statistics -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/stats_layout"
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible">
+
+            <Spinner
+                android:id="@+id/inex_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="5dp"
+                android:backgroundTint="@android:color/black"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/inex_stat_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="7dp"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inex_spinner"
+                tools:text="Total InEx in Month" />
+
+            <TextView
+                android:id="@+id/inex_stat_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="22dp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inex_stat_title"
+                tools:text="Rp1.000.000" />
+
+            <lecho.lib.hellocharts.view.PieChartView
+                android:id="@+id/pie_chart"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_marginStart="17dp"
+                android:layout_marginTop="25dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inex_stat_total" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/inex_stat_rv"
+                android:layout_width="190dp"
+                android:layout_height="230dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="96dp"
+                android:layout_marginEnd="3dp"
+                android:overScrollMode="never"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.785"
+                app:layout_constraintStart_toEndOf="@+id/pie_chart"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/list_piechart" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/separated_view"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="340dp"
+            android:background="@color/backgroundColor"
+            tools:visibility="visible" />
+
+        <!-- No Transactions -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/notrans_layout"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="210dp"
+            tools:visibility="gone">
+
+            <ImageView
+                android:id="@+id/notrans_iv"
+                android:layout_width="175dp"
+                android:layout_height="175dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitXY"
+                android:src="@drawable/background_no_transactions"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/notrans_month_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/notrans_iv"
+                app:layout_constraintVertical_bias="0.0"
+                tools:text="No transactions in Month" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- InEx Details -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/inex_stat_details_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="360dp"
+            android:overScrollMode="never"
+            android:paddingStart="2dp"
+            android:paddingTop="13dp"
+            android:paddingEnd="2dp"
+            android:paddingBottom="80dp"
+            tools:listitem="@layout/list_inex"
+            tools:visibility="visible" />
+
+    </FrameLayout>
+
+</androidx.core.widget.NestedScrollView>

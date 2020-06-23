@@ -1,0 +1,95 @@
+<resources>
+    <string name="app_name">Casher</string>
+    <string name="background_home">Background Home</string>
+
+    <string name="home">Home</string>
+    <string name="stats">Statistics</string>
+    <string name="add">Add</string>
+    <string name="planning">Planning</string>
+    <string name="account">Account</string>
+    <string name="bell">Notification Bell</string>
+
+    <string name="balance">Balance</string>
+    <string name="income">Income</string>
+    <string name="expenses">Expenses</string>
+
+    <string name="total">Total</string>
+    <string name="memo">Notes</string>
+    <string name="done">Done</string>
+
+    <string name="details_inex_info">Details</string>
+    <string name="date_info">Date</string>
+    <string name="category_info">Category</string>
+    <string name="total_info">Total</string>
+    <string name="notes_info">Notes</string>
+    <string name="underConstructions">This feature is under construction</string>
+    <string name="notification_bell">Notifications</string>
+
+    <string-array name="months">
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+    <!-- Name of InEx -->
+    <string-array name="inex">
+        <item>Income</item>
+        <item>Expenses</item>
+    </string-array>
+
+    <!-- Categories -->
+    <!-- Income -->
+    <string-array name="categories_icon_in">
+        <item>salary</item>
+        <item>awards</item>
+        <item>grants</item>
+        <item>sale</item>
+        <item>rental</item>
+        <item>coupons</item>
+        <item>invest</item>
+        <item>others_in</item>
+    </string-array>
+
+    <string-array name="categories_title_in">
+        <item>Salary</item>
+        <item>Awards</item>
+        <item>Grants</item>
+        <item>Sale</item>
+        <item>Rental</item>
+        <item>Coupons</item>
+        <item>Invest</item>
+        <item>Others</item>
+    </string-array>
+
+    <!-- Expenses -->
+    <string-array name="categories_icon_ex">
+        <item>food</item>
+        <item>shopping</item>
+        <item>transport</item>
+        <item>entertain</item>
+        <item>clothes</item>
+        <item>education</item>
+        <item>office</item>
+        <item>others_ex</item>
+    </string-array>
+
+    <string-array name="categories_title_ex">
+        <item>Food</item>
+        <item>Shopping</item>
+        <item>Transport</item>
+        <item>Entertain</item>
+        <item>Clothes</item>
+        <item>Education</item>
+        <item>Office</item>
+        <item>Others</item>
+    </string-array>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5398FF</color>
+    <color name="colorPrimaryDark">#3787FF</color>
+    <color name="colorAccent">#5398FF</color>
+    <color name="backgroundColor">#F8F8F8</color>
+    <color name="unclicked">#C1C1C1</color>
+    <color name="whiteColor">#FFFFFF</color>
+    <color name="greyColor">#838383</color>
+    <color name="deleteColor">#FF4A4A</color>
+    <color name="editColor">#FFD733</color>
+
+    <!-- InexStats Color -->
+    <color name="inexStatsColor1">#FF4444</color>
+    <color name="inexStatsColor2">#FFD045</color>
+    <color name="inexStatsColor3">#37EF77</color>
+    <color name="inexStatsColor4">#2179DF</color>
+    <color name="inexStatsColor5">#AA4DDD</color>
+    <color name="inexStatsColor6">#F42DD9</color>
+    <color name="inexStatsColor7">#FF8400</color>
+    <color name="inexStatsColor8">#43CDE8</color>
+
+    <array name="inex_stats_color">
+        <item>@color/inexStatsColor1</item>
+        <item>@color/inexStatsColor2</item>
+        <item>@color/inexStatsColor3</item>
+        <item>@color/inexStatsColor4</item>
+        <item>@color/inexStatsColor5</item>
+        <item>@color/inexStatsColor6</item>
+        <item>@color/inexStatsColor7</item>
+        <item>@color/inexStatsColor8</item>
+    </array>
+</resources>
