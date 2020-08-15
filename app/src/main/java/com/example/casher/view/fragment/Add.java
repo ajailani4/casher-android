@@ -57,6 +57,7 @@ public class Add extends Fragment {
     private Button doneBtn;
     private RecyclerView categoriesRv;
     private RecyclerView.LayoutManager layoutManager;
+    private ProgressDialog progressDialog;
     private CategoriesViewModel catViewModel;
     private MonthViewModel monthViewModel;
     private DateViewModel dateViewModel;
@@ -119,6 +120,8 @@ public class Add extends Fragment {
 
         layoutManager = new GridLayoutManager(context, 4);
         categoriesRv.setLayoutManager(layoutManager);
+
+        progressDialog = new ProgressDialog(getContext());
 
         //Adapter for Spinner
         spinnerAdapter = ArrayAdapter.createFromResource(getContext(), R.array.inex, R.layout.custom_spinner_inex);
@@ -232,11 +235,6 @@ public class Add extends Fragment {
 
                 if(isDetailsInexInserted)
                 {
-                    ProgressDialog progressDialog = new ProgressDialog(getContext());
-                    progressDialog.setMessage("Please wait...");
-                    progressDialog.setCancelable(false);
-                    progressDialog.show();
-
                     insertDateInex();
                 } else
                 {
@@ -281,6 +279,8 @@ public class Add extends Fragment {
                     startActivity(mainIntent);
 
                     Toast.makeText(getContext(), "Successfully added", Toast.LENGTH_SHORT).show();
+
+                    progressDialog.hide();
                 } else
                 {
                     Toast.makeText(getContext(), "Unsuccessfully added", Toast.LENGTH_SHORT).show();
@@ -299,16 +299,14 @@ public class Add extends Fragment {
 
                 if(isDetailsInexEditted)
                 {
-                    ProgressDialog progressDialog = new ProgressDialog(getContext());
-                    progressDialog.setMessage("Please wait...");
-                    progressDialog.setCancelable(false);
-                    progressDialog.show();
+                    progressDialog.hide();
 
                     insertDateInex();
                 }
             }
         };
 
+        //Observe isDetailsInexEditted LiveData
         detailsInexViewModel.getIsDetailsInexEditted().observe(getViewLifecycleOwner(), inexDetailsEdittedObserver);
 
         //OBSERVER FOR isDetailsInexDeleted LiveData
@@ -324,6 +322,7 @@ public class Add extends Fragment {
             }
         };
 
+        //Observe isDetailsInexDeleted LiveData
         detailsInexViewModel.getIsDetailsInexDeleted().observe(getViewLifecycleOwner(), inexDetailsDeletedObserver);
 
         inexSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -363,6 +362,10 @@ public class Add extends Fragment {
         doneBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressDialog.setMessage("Please wait...");
+                progressDialog.setCancelable(false);
+                progressDialog.show();
+
                 int totalInex = 0;
                 String notesInex = "";
 

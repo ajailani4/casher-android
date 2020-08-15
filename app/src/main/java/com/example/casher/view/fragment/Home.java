@@ -203,7 +203,10 @@ public class Home extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 Log.d("Month name in Home", monthName);
 
-                monthViewModel.getMonth(parent.getItemAtPosition(position).toString());
+                dateInexRv.setVisibility(View.INVISIBLE);
+                monthName = parent.getItemAtPosition(position).toString();
+
+                monthViewModel.getMonth(monthName);
 
                 //Send monthName to Statistics
                 Bundle bundle = new Bundle();
